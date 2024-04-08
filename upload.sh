@@ -19,6 +19,12 @@ fi
 # Determine the MIME type of the file
 MIME_TYPE=$(file --brief --mime-type "$FILE_TO_UPLOAD")
 
+# Check for empty file MIME type
+if [ "$MIME_TYPE" == "inode/x-empty" ]; then
+    echo "Error: The file $FILE_TO_UPLOAD is empty and cannot be uploaded."
+    exit 1
+fi
+
 # Extract the file name from the file path
 FILE_NAME=$(basename "$FILE_TO_UPLOAD")
 
@@ -28,4 +34,3 @@ curl -X POST "$ENDPOINT" \
      -H "security-token: $SECURITY_TOKEN" \
      -H "file-name: $FILE_NAME" \
      --data-binary "@$FILE_TO_UPLOAD"
-
