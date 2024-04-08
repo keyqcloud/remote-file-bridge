@@ -8,7 +8,7 @@ fi
 
 FILE_TO_UPLOAD="$1"
 SECURITY_TOKEN="$2"
-ENDPOINT="https://pb30c2aqsh.execute-api.us-east-2.amazonaws.com/prod/upload"
+ENDPOINT="https://api.remotefilebridge.com/prod/upload"
 
 # Check if the file exists
 if [ ! -f "$FILE_TO_UPLOAD" ]; then

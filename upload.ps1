@@ -3,7 +3,7 @@ param (
     [Parameter(Mandatory=$true)][string]$Token
 )
 
-$Endpoint = "https://pb30c2aqsh.execute-api.us-east-2.amazonaws.com/prod/upload"
+$Endpoint = "https://api.remotefilebridge.com/prod/upload"
 
 if (-Not (Test-Path $FilePath)) {
     Write-Error "File $FilePath does not exist."
