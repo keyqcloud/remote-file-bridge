@@ -1,6 +1,6 @@
 param (
-    [Parameter(Mandatory=$true)][string]$FilePath,
-    [Parameter(Mandatory=$true)][string]$Token
+    [Parameter(Mandatory=$true)][string]$Token,
+    [Parameter(Mandatory=$true)][string]$FilePath
 )
 
 $Endpoint = "https://api.remotefilebridge.com/prod/upload"

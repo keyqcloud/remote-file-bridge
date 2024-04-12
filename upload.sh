@@ -2,12 +2,12 @@
 
 # Check if the correct number of arguments are provided
 if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <file-to-upload> <security-token>"
+    echo "Usage: $0 <security-token> <file-to-upload>"
     exit 1
 fi
 
-FILE_TO_UPLOAD="$1"
-SECURITY_TOKEN="$2"
+SECURITY_TOKEN="$1"
+FILE_TO_UPLOAD="$2"
 ENDPOINT="https://api.remotefilebridge.com/prod/upload"
 
 # Check if the file exists
